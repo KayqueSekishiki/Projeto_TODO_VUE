@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="wrappe">
+        <div id="form-wrapper">
+          <div id="o-form">
+            <input type="text" id="text-novo-item" />
+            <div>
+              <input type="checkbox" id="is-important" />
+              <label for="is-important">Importante</label>
+            </div>
+            <button>Salvar</button>
+          </div>
+
+          <div id="list-wrapper">
+            <div class="item" v-for="item in lista">
+              <p class="texto-item">{{item.texto}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3.0.0-rc.5/dist/vue.global.js"></script>
+
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            lista: [
+              {
+                texto: "Item importante",
+                importante: true,
+                feito: false,
+              },
+              {
+                texto: "Item feito",
+                importante: false,
+                feito: true,
+              },
+              {
+                texto: "Item a fazer",
+                importante: false,
+                feito: false,
+              },
+            ],
+          };
+        },
+      });
+    </script>
+  </body>
+</html>
