@@ -7,7 +7,7 @@
   </head>
   <body>
     <div id="app">
-      <div id="wrappe">
+      <div id="wrapper">
         <div id="form-wrapper">
           <div id="o-form">
             <input type="text" id="text-novo-item" />
@@ -19,8 +19,8 @@
           </div>
 
           <div id="list-wrapper">
-            <div class="item" v-for="item in lista">
-              <p class="texto-item">{{item.texto}}</p>
+            <div class="item" v-for="item in list">
+              <p class="text-item">{{item.text}}</p>
             </div>
           </div>
         </div>
@@ -32,21 +32,21 @@
       Vue.createApp({
         data() {
           return {
-            lista: [
+            list: [
               {
-                texto: "Item importante",
-                importante: true,
-                feito: false,
+                text: "Item importante",
+                important: true,
+                done: false,
               },
               {
-                texto: "Item feito",
-                importante: false,
-                feito: true,
+                text: "Item feito",
+                important: false,
+                done: true,
               },
               {
-                texto: "Item a fazer",
-                importante: false,
-                feito: false,
+                text: "Item a fazer",
+                important: false,
+                done: false,
               },
             ],
           };
