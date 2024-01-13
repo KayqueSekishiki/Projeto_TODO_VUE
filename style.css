@@ -9,13 +9,49 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  background-color: lightgray;
+  background-color: #ececec;
 }
 
 .title {
   padding: 2rem;
+  text-align: center;
   text-transform: uppercase;
   text-decoration: line-through;
   text-decoration-color: #f2e291;
   color: #82c0d9;
+}
+
+#o-form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f2f2f2;
+  padding: 0.8rem;
+  border: 1px solid #e4e4e4;
+  border-radius: 0.5rem;
+  gap: 1rem;
+}
+
+#text-new-item {
+  border-radius: 0.2rem;
+  border: 1px solid #e4e4e4;
+}
+
+#text-new-item:focus {
+  border-radius: 2rem;
+  border: 1px solid #e4e4e4;
+}
+
+#is-important {
+  cursor: pointer;
+  margin-right: 0.3rem;
+}
+
+#count {
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+  font-size: 0.6rem;
 }
