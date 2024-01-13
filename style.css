@@ -13,15 +13,23 @@ body {
 }
 
 .title {
-  padding: 2rem;
+  padding: 2rem 0rem 1rem 0rem;
   text-align: center;
   text-transform: uppercase;
   text-decoration: line-through;
   text-decoration-color: #f2e291;
+  font-size: 4rem;
   color: #82c0d9;
 }
 
+#form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #o-form {
+  width: 30rem;
   position: relative;
   display: flex;
   justify-content: center;
@@ -36,8 +44,11 @@ body {
 }
 
 #text-new-item {
+  width: 15rem;
+  height: 1.5rem;
   border-radius: 0.2rem;
   border: 1px solid #e4e4e4;
+  padding-left: 1rem;
 }
 
 #text-new-item:focus {
@@ -50,10 +61,36 @@ body {
   margin-right: 0.3rem;
 }
 
+button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #000;
+  font-weight: bold;
+  background-color: #88c7e8;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem #999;
+}
+
+button:hover {
+  background-color: #6b9cb6;
+}
+
+button:active {
+  background-color: #6b9cb6;
+  box-shadow: 0 0.2rem #666;
+  transform: translateY(4px);
+}
+
 #count {
   position: absolute;
-  top: 2rem;
-  left: 1rem;
+  top: 2.5rem;
+  left: 1.5rem;
   font-size: 0.6rem;
 }
 
@@ -66,6 +103,8 @@ body {
 }
 
 .item {
+  user-select: none;
+  cursor: pointer;
   position: relative;
   display: flex;
   justify-content: center;
@@ -77,9 +116,15 @@ body {
 }
 
 .item::after {
-  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "À fazer";
   width: 8rem;
   height: 2rem;
+
+  font-size: 0.8rem;
+  font-weight: bold;
   background-color: #ffba10;
 
   position: absolute;
@@ -92,6 +137,7 @@ body {
 }
 
 .important::after {
+  content: "Importante";
   background-color: #fa7667;
 }
 
@@ -101,5 +147,6 @@ body {
 }
 
 .done::after {
+  content: "Finalizado";
   background-color: #d6d6d6;
 }

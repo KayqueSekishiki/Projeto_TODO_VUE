@@ -27,7 +27,7 @@
               />
               <label for="is-important">Importante</label>
             </div>
-            <button @click="saveNewItem" v-if="textNewItem > 0">Salvar</button>
+            <button @click="saveNewItem">Salvar</button>
             <p id="count">{{qttEntered}}/20</p>
           </div>
 
@@ -53,23 +53,7 @@
           return {
             textNewItem: "",
             newImportantItem: false,
-            list: [
-              {
-                text: "Item importante",
-                important: true,
-                done: false,
-              },
-              {
-                text: "Item feito",
-                important: false,
-                done: true,
-              },
-              {
-                text: "Item a fazer",
-                important: false,
-                done: false,
-              },
-            ],
+            list: [],
           };
         },
         methods: {
