@@ -10,16 +10,21 @@
       <div id="wrapper">
         <div id="form-wrapper">
           <div id="o-form">
-            <input type="text" id="text-novo-item" />
+            <input type="text" id="text-new-item" v-model="textNewItem" />
             <div>
-              <input type="checkbox" id="is-important" />
+              <input type="checkbox" id="is-important" v-model="newImportantItem"/>
               <label for="is-important">Importante</label>
             </div>
-            <button>Salvar</button>
+            <button v-on:click"saveNewItem">Salvar</button>
           </div>
 
           <div id="list-wrapper">
-            <div class="item" v-for="item in list">
+            <div
+              class="item"
+              v-bind:class="{important : item.important, done : item.done}"
+              v-for="item in list"
+              v-on:click="item.done = !item.done"
+            >
               <p class="text-item">{{item.text}}</p>
             </div>
           </div>
@@ -32,6 +37,8 @@
       Vue.createApp({
         data() {
           return {
+            textNewItem: "",
+            newImportantItem: false,
             list: [
               {
                 text: "Item importante",
@@ -51,6 +58,16 @@
             ],
           };
         },
+        methods:{
+          saveNewItem(){
+            let newItem = {
+              text: this.textNewItem,
+                important: this.newImportantItem,
+                done: false,
+            }
+            this.list.push(newItem)
+          }
+        }
       }).mount("#app");
     </script>
   </body>
