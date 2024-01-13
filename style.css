@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: lightgray;
+}
+
+.title {
+  padding: 2rem;
+  text-transform: uppercase;
+  text-decoration: line-through;
+  text-decoration-color: #f2e291;
+  color: #82c0d9;
+}
