@@ -55,3 +55,21 @@ body {
   left: 1rem;
   font-size: 0.6rem;
 }
+
+#list-wrapper {
+  max-width: 40rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background-color: red;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  height: 8rem;
+  background-color: #f9f391;
+}
