@@ -10,12 +10,23 @@
       <div id="wrapper">
         <div id="form-wrapper">
           <div id="o-form">
-            <input type="text" id="text-new-item" v-model="textNewItem" />
+            <input
+              type="text"
+              id="text-new-item"
+              v-model="textNewItem"
+              @keyup.enter="saveNewItem"
+              maxlength="20"
+            />
             <div>
-              <input type="checkbox" id="is-important" v-model="newImportantItem"/>
+              <input
+                type="checkbox"
+                id="is-important"
+                v-model="newImportantItem"
+              />
               <label for="is-important">Importante</label>
             </div>
-            <button v-on:click"saveNewItem">Salvar</button>
+            <button @click="saveNewItem" v-if="textNewItem > 0">Salvar</button>
+            <p id="count">{{qttEntered}}/20</p>
           </div>
 
           <div id="list-wrapper">
@@ -24,6 +35,7 @@
               v-bind:class="{important : item.important, done : item.done}"
               v-for="item in list"
               v-on:click="item.done = !item.done"
+              :key="item.id"
             >
               <p class="text-item">{{item.text}}</p>
             </div>
@@ -58,16 +70,26 @@
             ],
           };
         },
-        methods:{
-          saveNewItem(){
-            let newItem = {
-              text: this.textNewItem,
+        methods: {
+          saveNewItem() {
+            if (this.textNewItem.length > 0) {
+              let newItem = {
+                id: new Date().getTime(),
+                text: this.textNewItem,
                 important: this.newImportantItem,
                 done: false,
+              };
+              this.list.push(newItem);
+              this.textNewItem = "";
+              this.newImportantItem = false;
             }
-            this.list.push(newItem)
-          }
-        }
+          },
+        },
+        computed: {
+          qttEntered() {
+            return this.textNewItem.length;
+          },
+        },
       }).mount("#app");
     </script>
   </body>
