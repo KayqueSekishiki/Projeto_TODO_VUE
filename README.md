@@ -6,5 +6,5 @@ Projeto de Lista de Tarefas realizado com Vue Js.
 
 ## Images:
 <div >  
-    <img src="https://github.com/KayqueSekishiki/Projeto_TODO_VUE/assets/104032451/91f797f6-22d3-4108-8130-c589345d14c6" alt="jogo-memória-01" width="800"/>
+    <img src="https://github.com/KayqueSekishiki/Projeto_TODO_VUE/assets/104032451/91f797f6-22d3-4108-8130-c589345d14c6" alt="lista_tarefas" width="800"/>
 </div>
